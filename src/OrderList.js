@@ -14,7 +14,7 @@ class OrderList extends Component {
 
     componentDidMount() {
         this.setState({isLoading: true});
-        fetch('http://fastfoodrestapi-env.eba-mz87ac4w.us-east-2.elasticbeanstalk.com/api/orders')
+        fetch('https://mighty-sands-94629.herokuapp.com/api/orders')
             .then(response => response.json())
             .then(data => this.setState(
                 {orders: data, isLoading: false})
@@ -22,7 +22,7 @@ class OrderList extends Component {
     }
 
     async remove(id) {
-        await fetch(`http://fastfoodrestapi-env.eba-mz87ac4w.us-east-2.elasticbeanstalk.com/api/orders/${id}`, {
+        await fetch(`https://mighty-sands-94629.herokuapp.com/api/orders/${id}`, {
             method: 'DELETE',
             headers: {
                 'Accept': 'application/json',
@@ -68,7 +68,7 @@ class OrderList extends Component {
                         <Button color="success" tag={Link} to="/orders/new">Add Order</Button>
                     </div>
                     <h3>Order Request Table</h3>
-                    <a target="_blank" href="http://fastfoodrestapi-env.eba-mz87ac4w.us-east-2.elasticbeanstalk.com/api/orders">Link to cloud hosted, server side, Spring Boot REST endpoint with CORS allowed</a>
+                    <a target="_blank" href="https://mighty-sands-94629.herokuapp.com/api/orders">Link to cloud hosted, server side, Spring Boot REST endpoint with CORS allowed</a>
                     <Table className="mt-4">
                         <thead>
                         <tr>

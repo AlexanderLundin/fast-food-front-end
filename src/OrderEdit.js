@@ -27,7 +27,7 @@ class OrderEdit extends Component {
 
     componentDidMount() {
         this.setState({isLoading: true});
-        fetch(`http://fastfoodrestapi-env.eba-mz87ac4w.us-east-2.elasticbeanstalk.com/api/orders/${this.props.match.params.id}`)
+        fetch(`https://mighty-sands-94629.herokuapp.com/api/orders/${this.props.match.params.id}`)
             .then(response => response.json())
             .then(data => this.setState(
                 {item: data, isLoading: false})
@@ -52,7 +52,7 @@ class OrderEdit extends Component {
 
     async postOrder(){
         const {item} = this.state;
-        await fetch(`http://fastfoodrestapi-env.eba-mz87ac4w.us-east-2.elasticbeanstalk.com/api/orders`, {
+        await fetch(`https://mighty-sands-94629.herokuapp.com/api/orders`, {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -65,7 +65,7 @@ class OrderEdit extends Component {
 
     async patchOrder(){
         const {item} = this.state;
-        await fetch(`http://fastfoodrestapi-env.eba-mz87ac4w.us-east-2.elasticbeanstalk.com/api/orders/${this.props.match.params.id}`, {
+        await fetch(`https://mighty-sands-94629.herokuapp.com/api/orders/${this.props.match.params.id}`, {
             method: 'PUT',
             headers: {
                 'Accept': 'application/json',
